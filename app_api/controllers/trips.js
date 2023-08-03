@@ -29,8 +29,8 @@ const tripsList = async (req, res) => {
 const tripsFindByCode = async (req, res) => {
     model
         .find({'code': req.params.tripCode })
-        .exec((err, trip) => {
-            if (!trip) {
+        .exec((err, trips) => {
+            if (!trips) {
                 return res
                     .status(404)
                     .json({"message": "trip not found"});
