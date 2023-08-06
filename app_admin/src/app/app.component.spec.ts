@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'travlr-admin'`, () => {
+  it(`should have as title 'Travelr Getaways Admin'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('travlr-admin');
+    expect(app.title).toEqual('Travelr Getaways Admin');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to travlr-admin!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Travelr Getaways Admin!');
   });
 });
