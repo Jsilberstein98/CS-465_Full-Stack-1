@@ -58,3 +58,4 @@ process.on('SIGTERM', () => {
 connect();
 
 require('./travelr');
+require('./user');
