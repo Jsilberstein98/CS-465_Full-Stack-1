@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { TripDataService } from '../services/trip-data.service';
-import { Trip } from '../models/trip';
+//import { Trip } from '../models/trip';
+import { AuthenticationService } from '../services/authentication.service';
 
 
 
@@ -14,7 +15,8 @@ export class DeleteTripComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private tripService: TripDataService
+    private tripService: TripDataService,
+    private authenticationService: AuthenticationService
   ) { }
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class DeleteTripComponent implements OnInit {
       return;
     }
 
+    
     console.log("DeleteTripComponent found tripCode " + tripCode);
 
     this.tripService.deleteTrip(tripCode)
@@ -33,5 +36,9 @@ export class DeleteTripComponent implements OnInit {
         this.router.navigate(['']);
       });
   }
+
+  public isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
+   }
 
 }
